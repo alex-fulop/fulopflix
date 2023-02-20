@@ -1,4 +1,22 @@
-export function middleware(req, ev) {
-    console.log(req, ev)
-    return new Response('Hello world');
+import { NextResponse } from "next/server";
+import { verifyToken } from "./lib/utils";
+
+export async function middleware(req, ev) {
+    const token = req ? req.cookies.get("token") : null;
+    const userId = await verifyToken(token);
+    const { pathname } = req.nextUrl;
+
+    if (
+        pathname.includes("/login") ||
+        userId ||
+        pathname.includes("/static")
+    ) {
+        return NextResponse.next();
+    }
+
+    if ((!token || !userId) && pathname !== "/login") {
+        const url = req.nextUrl.clone();
+        url.pathname = "/login";
+        return NextResponse.rewrite(url);
+    }
 }

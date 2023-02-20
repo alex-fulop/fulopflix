@@ -9,11 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@magic-sdk/admin": "^1.8.0",
     "@next/font": "13.1.6",
+    "classnames": "^2.3.2",
+    "cookie": "^0.5.0",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
-    "next": "13.1.6",
+    "framer-motion": "^9.0.2",
+    "jose": "^4.12.0",
+    "jsonwebtoken": "^9.0.0",
+    "magic-sdk": "^13.2.0",
+    "next": "^12.3.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-modal": "^3.16.1"
   }
 }
