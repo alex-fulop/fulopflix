@@ -19,7 +19,7 @@ export default function App({Component, pageProps}) {
             }
         }
         handleLoggedIn();
-    }, []);
+    });
 
     useEffect(() => {
         handleRouterLoading(setIsLoading, router);

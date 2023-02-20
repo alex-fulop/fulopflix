@@ -57,7 +57,7 @@ const Video = ({video}) => {
             }
         }
         getFavoritedData();
-    }, []);
+    });
 
     const handleToggleDislike = async () => {
         const disliked = !toggleDislike;

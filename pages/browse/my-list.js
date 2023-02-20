@@ -4,10 +4,10 @@ import CardCarousel from "@/components/card-carousel/card-carousel";
 
 import styles from '../../styles/MyList.module.css';
 import {getMyList} from "@/lib/videos";
-import useRedirectUser from "@/utils/redirectUser";
+import getRedirectUser from "@/utils/redirectUser";
 
 export async function getServerSideProps(context) {
-    const {userId, token} = await useRedirectUser(context);
+    const {userId, token} = await getRedirectUser(context);
 
     const videos = await getMyList(userId, token);
     return {

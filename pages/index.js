@@ -4,10 +4,10 @@ import Banner from "@/components/banner/banner";
 import Navbar from "@/components/navbar/navbar";
 import CardCarousel from "@/components/card-carousel/card-carousel";
 import {getPopularVideos, getVideos, getWatchItAgainVideos} from "@/lib/videos";
-import useRedirectUser from "@/utils/redirectUser";
+import getRedirectUser from "@/utils/redirectUser";
 
 export async function getServerSideProps(context) {
-    const {userId, token} = await useRedirectUser(context);
+    const {userId, token} = await getRedirectUser(context);
 
     const watchItAgainVideos = await getWatchItAgainVideos(userId, token);
     const disneyVideos = await getVideos('disney trailer');
